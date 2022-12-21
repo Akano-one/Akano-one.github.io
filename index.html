@@ -7,17 +7,72 @@
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="2299">
   <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
   </style>
 </head>
 <body>
-<p class="p1">&lt;!-- HTML for the form and list --&gt;</p>
-<p class="p1">&lt;form id="todo-form"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" id="todo-input" placeholder="Add a todo item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;button type="submit"&gt;Add&lt;/button&gt;</p>
-<p class="p1">&lt;/form&gt;</p>
-<p class="p1">&lt;ul id="todo-list"&gt;&lt;/ul&gt;</p>
-<p class="p2"><br></p>
+<p class="p1"><span class="s1">&lt;!-- HTML for the form and list --&gt;</span></p>
+<p class="p1"><span class="s1">&lt;form id="todo-form"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;input type="text" id="todo-input" placeholder="Add a todo item"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;button type="submit"&gt;Add&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/form&gt;</span></p>
+<p class="p1"><span class="s1">&lt;ul id="todo-list"&gt;&lt;/ul&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;!-- CSS for styling --&gt;</span></p>
+<p class="p1"><span class="s1">&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#todo-form {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#todo-input {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>flex: 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-right: 0.5em;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#todo-list {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>list-style: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#todo-list li {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#todo-list input[type="checkbox"] {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin-right: 0.5em;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;!-- JavaScript for interactivity --&gt;</span></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// Get references to the form and list elements</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const form = document.querySelector('#todo-form');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const list = document.querySelector('#todo-list');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// Add a submit event listener to the form</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>form.addEventListener('submit', (event) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Prevent the form from refreshing the page</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>event.preventDefault();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Get the value of the todo input field</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const todo = document.querySelector('#todo-input').value;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Add a new list item with the todo text and checkbox</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const item = document.createElement('li');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>item.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;input type="checkbox"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;label&gt;${todo}&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button&gt;Delete&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Add the new item to the list</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>list.appendChild(item);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Clear the todo input field</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.querySelector('#todo-input').value = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
 </body>
 </html>
